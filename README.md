@@ -35,20 +35,27 @@ Ensure you have the following installed:
    Install dependencies:
    ```
 
-bash
-Copy code
+```python
 pip install -r requirements.txt
+```
+
 Set up the database:
 
 Create a PostgreSQL database.
-Update the DATABASE_URL in .env or config.py with your database connection string.
-Download spaCy model:
 
-bash
-Copy code
-python -m spacy download en_core_web_sm
+```python
+Update the DATABASE_URL in .env or config.py with your database connection string.
+```
+
+Download spaCy model and nltk kit:
+
+```python
+python -m spacy download en_core_web_sm && python -c "import nltk; nltk.download('punkt'"
+
+```
+
 Run the project:
 
-bash
-Copy code
+```python
 uvicorn main:app --reload
+```
