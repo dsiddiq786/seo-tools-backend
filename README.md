@@ -68,6 +68,7 @@ Install necessary models for spaCy and nltk:
 ```bash
 python -m spacy download en_core_web_sm
 python -c "import nltk; nltk.download('punkt')"
+python -m textblob.download_corpora
 ```
 
 #### Step 6: Run the Application
@@ -212,7 +213,11 @@ python -m spacy download en_core_web_sm
 python -c "import nltk; nltk.download('punkt')"
 ```
 
----
+### TextBlob:
+
+```bash
+python -m textblob.download_corpora
+```
 
 ## Dependencies
 
