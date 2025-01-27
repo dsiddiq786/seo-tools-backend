@@ -16,3 +16,4 @@ class User(Base):
     token_refresh_date = Column(DateTime, default=datetime.utcnow)  # Token reset schedule
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
+    
