@@ -45,7 +45,8 @@ from app.api.v1.endpoints.tools import (
     seo_meta_description_generator,  # New
     domain_availability_checker,  # New
     youtube_thumbnail_downloader,  # New
-    image_compressor
+    image_compressor,
+    image_bg_remover
 )
 
 api_router = APIRouter()
@@ -87,6 +88,7 @@ api_router.include_router(image_resizer.router, prefix="/tools/image-resizer", t
 api_router.include_router(image_converter.router, prefix="/tools/image-converter", tags=["Image Tools"])
 api_router.include_router(image_compressor.router, prefix="/tools/image-compressor", tags=["Image Tools"])
 api_router.include_router(favicon_generator.router, prefix="/tools/favicon-generator", tags=["Image Tools"])
+api_router.include_router(image_bg_remover.router, prefix="/tools/image-bg-remover", tags=["Image Tools"])
 # api_router.include_router(image_alt_text_generator.router, prefix="/tools/image-alt-text", tags=["Image Tools"])
 api_router.include_router(image_metadata_extractor.router, prefix="/tools/image-metadata", tags=["Image Tools"])
 
