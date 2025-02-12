@@ -11,6 +11,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from sentence_transformers import SentenceTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sumy.summarizers.lsa import LsaSummarizer
+from fastapi.middleware.cors import CORSMiddleware
 import nltk
 
 # Ensure database tables exist
@@ -18,6 +19,22 @@ Base.metadata.create_all(bind=engine)
 
 # Initialize FastAPI app
 app = FastAPI(title="SEO Tools Platform", debug=True)
+
+origins = [
+    "http://localhost",
+    "http://localhost:3000",  # React/Vue/Next.js running on port 3000
+    "https://yourfrontenddomain.com",
+    "*",  # Allow all (use with caution in production)
+]
+
+# Add CORS Middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # Allowed origins
+    allow_credentials=True,  # Allow sending credentials like cookies/auth headers
+    allow_methods=["*"],  # Allow all methods (GET, POST, PUT, DELETE, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
 
 # Middleware
 app.add_middleware(TokenLimiterMiddleware)
