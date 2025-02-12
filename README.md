@@ -212,6 +212,7 @@ python -m spacy download en_core_web_sm
 ```bash
 python -c "import nltk; nltk.download('punkt')"
 ```
+wget https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx
 
 ### TextBlob:
 
