@@ -13,6 +13,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sumy.summarizers.lsa import LsaSummarizer
 from fastapi.middleware.cors import CORSMiddleware
 import nltk
+from app.core.api_logger import APILoggerMiddleware
 
 # Ensure database tables exist
 Base.metadata.create_all(bind=engine)
@@ -38,6 +39,9 @@ app.add_middleware(
 
 # Middleware
 app.add_middleware(TokenLimiterMiddleware)
+
+# ✅ Add API Logger Middleware
+app.add_middleware(APILoggerMiddleware)
 
 # ✅ Cache Directory Path
 # CACHE_DIR = "./cache"
