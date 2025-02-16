@@ -2,7 +2,8 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from fastapi import Request
 from sqlalchemy.orm import Session
 from app.db.session import SessionLocal
-from app.db.models.user import User, APILog
+from app.db.models.user import User
+from app.db.models.api_logs import APILog
 import time
 import json
 

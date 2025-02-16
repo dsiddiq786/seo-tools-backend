@@ -2,7 +2,8 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from fastapi import Request, HTTPException
 from sqlalchemy.orm import Session
 from app.db.session import SessionLocal
-from app.db.models.user import User, APIUsage
+from app.db.models.user import User  # ✅ Correct for User
+from app.db.models.api_usage import APIUsage  # ✅ Correct for APIUsage
 from app.core.security import decode_jwt
 import uuid
 import time
