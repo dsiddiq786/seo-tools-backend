@@ -24,23 +24,28 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_context.verify(plain_password, hashed_password)
 
 # ✅ Create Access Token
-def create_jwt(data: dict, expires_delta: int = ACCESS_TOKEN_EXPIRE_MINUTES):
-    to_encode = data.copy()
-    expire = datetime.datetime.utcnow() + datetime.timedelta(minutes=expires_delta)
-    to_encode.update({"exp": expire})
-    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+def create_jwt(data: dict, expires_delta: int = 30):
+    expire = datetime.utcnow() + timedelta(minutes=expires_delta)  # ✅ Fixed reference
+
+    # Proceed with JWT creation (assuming you're using PyJWT)
+    secret_key = "your_secret_key"
+    token = jwt.encode({"exp": expire, **data}, secret_key, algorithm="HS256")
+
+    return token
 
 # ✅ Create Refresh Token
-def create_refresh_token(data: dict):
+def create_refresh_token(data: dict, expires_delta: int = 30):
     to_encode = data.copy()
-    expire = datetime.datetime.utcnow() + datetime.timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS)
+    expire = datetime.utcnow() + timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS, minutes=expires_delta)  # ✅ Corrected timedelta usage
     to_encode.update({"exp": expire})
-    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    secret_key = "your_secret_key"
+    return jwt.encode(to_encode, secret_key, algorithm=ALGORITHM)
 
 # ✅ Decode JWT Token
 def decode_jwt(token: str):
     try:
-        return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        secret_key = "your_secret_key"
+        return jwt.decode(token, secret_key, algorithms=[ALGORITHM])
     except jwt.ExpiredSignatureError:
         return None  # Token expired
     except jwt.InvalidTokenError:

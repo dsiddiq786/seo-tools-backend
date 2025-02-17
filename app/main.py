@@ -1,5 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.openapi.utils import get_openapi
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from app.core.security import decode_jwt  # Function to validate JWTs
 from app.api.v1.routers import api_router
 from app.core.token_limiter import TokenLimiterMiddleware
 from app.db.session import engine
@@ -37,7 +39,31 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
-# Middleware
+@app.get("/")
+def main():
+    return {"data":"Hello this is Small SEO TOOLS API Backend"}
+
+# ✅ OAuth2 scheme (Swagger will use this for Authentication)
+security = HTTPBearer()
+
+# ✅ Function to get current user
+def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    token = credentials.credentials  # Extract token from header
+    user_data = decode_jwt(token)  # Validate token
+    if not user_data:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid or expired token",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    return user_data
+
+# ✅ Protected API Route (Requires Authorization)
+@app.get("/protected-endpoint")
+async def protected_route(current_user: dict = Depends(get_current_user)):
+    return {"message": "You have accessed a protected route!", "user": current_user}
+
+# Limit Check and Security Middleware
 app.add_middleware(TokenLimiterMiddleware)
 
 # ✅ Add API Logger Middleware
@@ -122,16 +148,28 @@ async def check_status():
 
 
 # Custom OpenAPI Setup
+# ✅ Manually set Bearer Token in OpenAPI (Swagger)
 def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
     openapi_schema = get_openapi(
-        title="SEO Tools Platform",
+        title="My API",
         version="1.0.0",
-        description="API documentation for the SEO Tools Platform",
+        description="API with JWT Authentication",
         routes=app.routes,
     )
+    security_scheme = {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+    }
+    openapi_schema["components"]["securitySchemes"] = {
+        "BearerAuth": security_scheme
+    }
+    for path in openapi_schema["paths"]:
+        for method in openapi_schema["paths"][path]:
+            openapi_schema["paths"][path][method]["security"] = [{"BearerAuth": []}]
     app.openapi_schema = openapi_schema
-    return app.openapi_schema
+    return openapi_schema
 
-app.openapi = custom_openapi
+app.openapi = custom_openapi  # ✅ Override Swagger schema

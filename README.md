@@ -212,6 +212,7 @@ python -m spacy download en_core_web_sm
 ```bash
 python -c "import nltk; nltk.download('punkt')"
 ```
+
 wget https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx
 
 ### TextBlob:
@@ -235,6 +236,28 @@ Install them via `requirements.txt`:
 
 ```bash
 pip install -r requirements.txt
+```
+
+JS code to prevent guest user multiple calls
+
+```javascript
+// Store unique user ID in Local Storage
+const guestID = document.cookie
+  .split("; ")
+  .find((row) => row.startsWith("guest_user_id="));
+if (guestID) {
+  localStorage.setItem("user_tracking_id", guestID.split("=")[1]);
+}
+
+// Prevent API abuse by checking storage before making requests
+function checkAPIUsage() {
+  const storedID = localStorage.getItem("user_tracking_id");
+  if (!storedID) {
+    alert("Unauthorized access detected!");
+    return false;
+  }
+  return true;
+}
 ```
 
 ---

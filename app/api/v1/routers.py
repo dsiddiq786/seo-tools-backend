@@ -56,14 +56,14 @@ api_router.include_router(auth.router, prefix="/auth", tags=["Auth"])
 api_router.include_router(users.router, prefix="/users", tags=["Users"])
 
 # Text Tools
-api_router.include_router(text_analysis.router, prefix="/tools/text", tags=["Text Tools"])
-api_router.include_router(content_summary.router, prefix="/tools/content-summary", tags=["Text Tools"])
-api_router.include_router(sentence_rephraser.router, prefix="/tools/sentence-rephraser", tags=["Text Tools"])
-api_router.include_router(content_tone_checker.router, prefix="/tools/content-tone", tags=["Text Tools"])
-api_router.include_router(plagiarism_checker.router, prefix="/tools/plagiarism", tags=["Text Tools"])
-api_router.include_router(readability_suggestions.router, prefix="/tools/readability-suggestions", tags=["Text Tools"])
-api_router.include_router(content_similarity.router, prefix="/tools/content-similarity", tags=["Text Tools"])
-api_router.include_router(grammar_checker.router, prefix="/tools/grammar-checker", tags=["Text Tools"])
+# api_router.include_router(text_analysis.router, prefix="/tools/text", tags=["Text Tools"])
+# api_router.include_router(content_summary.router, prefix="/tools/content-summary", tags=["Text Tools"])
+# api_router.include_router(sentence_rephraser.router, prefix="/tools/sentence-rephraser", tags=["Text Tools"])
+# api_router.include_router(content_tone_checker.router, prefix="/tools/content-tone", tags=["Text Tools"])
+# api_router.include_router(plagiarism_checker.router, prefix="/tools/plagiarism", tags=["Text Tools"])
+# api_router.include_router(readability_suggestions.router, prefix="/tools/readability-suggestions", tags=["Text Tools"])
+# api_router.include_router(content_similarity.router, prefix="/tools/content-similarity", tags=["Text Tools"])
+# api_router.include_router(grammar_checker.router, prefix="/tools/grammar-checker", tags=["Text Tools"])
 
 # Keyword Tools
 api_router.include_router(keyword_analysis.router, prefix="/tools/keywords", tags=["Keyword Tools"])

@@ -23,9 +23,13 @@ class APILoggerMiddleware(BaseHTTPMiddleware):
         with SessionLocal() as db:
             if auth_header and auth_header.startswith("Bearer "):
                 token = auth_header.split(" ")[1]
-                user = db.query(User).filter(User.token == token).first()
-                if user:
-                    user_id = user.id
+                from app.core.security import decode_jwt
+
+                try:
+                    user_data = decode_jwt(token)  # ✅ Decode token to extract user ID
+                    user = db.query(User).filter(User.id == user_data["id"]).first()  # ✅ Filter by `id`
+                except Exception:
+                    user = None  # Handle invalid token
 
         # ✅ Extract request details
         ip_address = request.client.host
